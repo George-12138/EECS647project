@@ -3,14 +3,12 @@ $(document).ready(function(){
 		var title = document.getElementById("titleinput").value;
 		var text = $('textarea').val();
 		var d = new Date();
-    $.post("AddPost.php");
+    $.ajax({
+      type: "POST",
+      url: "AddPost.php",
+      data: {title:title,text:text,date:d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()},
+    });
 		addpost(title,text,d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
-
-    /*
-    {title:title,
-      text:text,
-      date:d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()
-    }*/
 	});
 });
 
