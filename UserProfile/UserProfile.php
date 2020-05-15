@@ -8,12 +8,37 @@
 <div class="about-section">
   <h1> User Profile</h1>
 </div>
-<input type="text" name="" value="">
-<h2 style="text-align:center">Our Team</h2>
+<p><button class="button">go back</button></p>
+
+<h2 style="text-align:center">Your Follower</h2>
+<div class="row">
+  <div class="UserColumn">
+    <div class="card">
+      <div class="container">
+        <p>photo</p>
+        <h2>UserName</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 style="text-align:center">Your Following</h2>
+<div class="row">
+  <div class="UserColumn">
+    <div class="card">
+      <div class="container">
+        <p>photo</p>
+        <h2>UserName</h2>
+        <p><button class="button">Unfollow</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 style="text-align:center">Your Posts</h2>
 <div class="row">
   <div class="column">
     <div class="card">
-      <input type="text" name="Post1" value="">
       <div class="container">
         <h2>Title</h2>
         <p class="title">UserName</p>
@@ -22,32 +47,12 @@
       </div>
     </div>
   </div>
-  <div class="column">
-    <div class="card">
-      <input type="text" name="Post1" value="UserName">
-      <div class="container">
-        <h2>Title</h2>
-        <p class="title">UserName</p>
-        <p>first 20 words in artice</p>
-        <p><button class="button">Read Post</button></p>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <input type="text" name="Post1" value="">
-      <div class="container">
-        <h2>Title</h2>
-        <p class="title">UserName</p>
-        <p>first 20 words in artice</p>
-        <p><button class="button">Read Post</button></p>
-      </div>
-    </div>
-  </div>
+</div>
 
+<h2 style="text-align:center">Your Replys</h2>
+<div class="row">
   <div class="column">
     <div class="card">
-      <input type="text" name="Post1" value="">
       <div class="container">
         <h2>Title</h2>
         <p class="title">UserName</p>
@@ -56,7 +61,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 </body>
