@@ -10,8 +10,9 @@
 <div class="about-section">
   <h1> User Profile</h1>
 </div>
-<p><button class="button" onclick="goback()">go back</button></p>
-
+<form method="post" action="../HomePage/HomePage.php">
+  <p><button class="button" type="submit"> go back </button></p>
+</form>
 <h2 style="text-align:center">Your Follower</h2>
 <div class="row">
   <div class="UserColumn">
