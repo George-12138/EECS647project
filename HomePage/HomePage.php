@@ -60,7 +60,14 @@ session_start();
                {
                  while ($row = $result->fetch_assoc())
                  {
-                       echo "<script>"."addpost('".$row["PostTitle"]."','".$row["PostText"]."','".$row["UserName"]."','".$row["PostDate"]."','".$row["PostID"]."','".$row["PostUser"].'")"."</script>";
+                       echo "<script>"."addpost('".
+                       $row["PostTitle"]."','".
+                       $row["PostText"]."','".
+                       $row["UserName"]."','".
+                       $row["PostDate"]."','".
+                       $row["PostID"]."','".
+                       $row["PostUser"]."')".
+                       "</script>";
                  }
                  $result->free();
                }
