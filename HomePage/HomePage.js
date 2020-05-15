@@ -9,19 +9,19 @@ $(document).ready(function(){
 	});
 });
 
-function addpost(h,t,u,d,i)
+function addpost(header,text,username,date,postid,userid)
 {
 	$(document).ready(function(){
 		$("#header").after(
 			'<div class="row container">'+
 			'<div class="col container m6">'+
-			'<h2 id="title" class="distext" data-value="'+i+'" onclick=topost(this)>'+h+'</h2>'+
-			'<p class="distext">'+t+'</p>'+
+			'<h2 id="title" class="distext" data-value="'+postid+'" onclick=topost(this)>'+header+'</h2>'+
+			'<p class="distext">'+text+'</p>'+
 			'</div>'+
 			'<div class="col container m1 center">'+
-			'<input type="image" class="round" src="head.png" height="30" width="30" data-value="'+i+'"onclick=toprofile(this)>'+
-      '<p class="id">'+u+'</p>'+
-			'<p class="id">'+d+'</p>'+
+			'<input type="image" class="round" src="head.png" height="30" width="30" data-value="'+userid+'"onclick=toprofile(this)>'+
+      '<p class="id">'+username+'</p>'+
+			'<p class="id">'+date+'</p>'+
 			'</div>'+
 			'</div>'
 		);

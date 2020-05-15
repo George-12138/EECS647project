@@ -10,7 +10,7 @@
 <div class="about-section">
   <h1> User Profile</h1>
 </div>
-<p><button class="button">go back</button></p>
+<p><button class="button" onclick="goback()">go back</button></p>
 
 <h2 style="text-align:center">Your Follower</h2>
 <div class="row">

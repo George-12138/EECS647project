@@ -128,7 +128,7 @@ session_start();
       {
           while ($row = $result->fetch_assoc())
           {
-           echo "<script>"."addreply('".$row["ReplyText"]."','".$row["UserName"]."','".$row["ReplyDate"]."','".$row["ReplyLike"]."','".$row["ReplyID"]."')"."</script>";
+           echo "<script>"."addreply('".$row["ReplyText"]."','".$row["UserName"]."','".$row["ReplyDate"]."','".$row["ReplyLike"]."','".$row["ReplyUser"]."')"."</script>";
           }
           $result->free();
       }
