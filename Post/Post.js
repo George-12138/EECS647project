@@ -4,7 +4,7 @@ $(document).ready(function(){
 		var text = $('textarea').val();
 		var d = new Date();
 		$.post("AddReply.php",{text:text,date:d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(),postid:postid});
-    location.reload();
+    setTimeout(function(){ location.reload(); }, 2000);
 	});
 });
 
@@ -42,7 +42,7 @@ function addlike(e){
   $.post("AddLike.php",
   {postid:e.dataset.value}
   );
-  location.reload();
+  setTimeout(function(){ location.reload(); }, 2000);
 }
 
 function toprofile(e){
