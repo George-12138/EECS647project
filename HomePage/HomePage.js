@@ -29,3 +29,7 @@ function addpost(h,t,d,i)
 		);
 	});
 }
+
+function backHome(){
+  window.location.replace("../LogInPage.php");
+}
