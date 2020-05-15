@@ -12,6 +12,11 @@ session_start();
 		type="text/css">
     </head>
     <body>
+      <form align="right" name="form1" method="post" action="../LogInPage.php">
+        <label>
+        <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+      </form>
       <?php
       $userID = $_SESSION["ID"];
       $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
@@ -71,5 +76,6 @@ session_start();
       			</div>
       			</div>
 		   </div>
+
     </body>
 </html>
