@@ -15,7 +15,6 @@ session_start();
     <body>
       <?php
       $userID = $_SESSION["ID"];
-      $PostID = $_SESSION["PostID"];
       $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
       if ($mysqli->connect_errno)
       {
@@ -128,7 +127,13 @@ session_start();
       {
           while ($row = $result->fetch_assoc())
           {
-           echo "<script>"."addreply('".$row["ReplyText"]."','".$row["UserName"]."','".$row["ReplyDate"]."','".$row["ReplyLike"]."','".$row["ReplyUser"]."')"."</script>";
+           echo "<script>"."addreply('".
+           $row["ReplyText"]."','".
+           $row["UserName"]."','".
+           $row["ReplyDate"]."','".
+           $row["ReplyLike"]."','".
+           $row["ReplyUser"]."')".
+           "</script>";
           }
           $result->free();
       }
