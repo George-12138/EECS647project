@@ -6,9 +6,12 @@
 <body>
 
 <div class="about-section">
-  <h1> Visiter Profile</h1>
+  <h1> Visiter Profilse</h1>
 </div>
-<p><button class="button">go back</button></p>
+<form method="post" action="../HomePage/HomePage.php">
+  <p><button class="button" type="submit"> go back </button></p>
+</form>
+
 <p><button class="button">Follow</button></p>
 <h2 style="text-align:center">Posts</h2>
 <div class="row">
