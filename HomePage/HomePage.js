@@ -7,6 +7,7 @@ $(document).ready(function(){
       type: "POST",
       url: "AddPost.php",
       data: {title:title,text:text,date:d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()},
+      function(){location.reload();}
     });
 		addpost(title,text,d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
 	});

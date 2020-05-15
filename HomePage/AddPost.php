@@ -18,13 +18,7 @@
   if ($result = $mysqli->query($query))
   {
   }
-  echo "
-  <script>
-  alert('Your Post has been submitted successfully!');
-  window.location.reload();
-  </script>
-    ";
-  }
+
     /* close connection */
-    $mysqli->close();
+  $mysqli->close();
 ?>
