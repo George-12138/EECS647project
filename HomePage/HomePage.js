@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var d = new Date();
     $.post("AddPost.php",
     {title:title,text:text,date:d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()});
-    setTimeout(function(){ location.reload(); }, 2000);
+    setTimeout(function(){ window.location.reload(); }, 500);
 	});
 });
 

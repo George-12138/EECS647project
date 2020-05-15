@@ -1,40 +1,63 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Profile</title>
-  </head>
-  <body>
-    <?php
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="UserProfile.css" rel="stylesheet" type="text/css">
+</head>
+<body>
 
-    $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
-    if ($mysqli->connect_errno)
-    {
-      printf("Connect failed: %s\n", $mysqli->connect_error);
-      exit();
-    }
+<div class="about-section">
+  <h1> User Profile</h1>
+</div>
+<input type="text" name="" value="">
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <input type="text" name="Post1" value="">
+      <div class="container">
+        <h2>Title</h2>
+        <p class="title">UserName</p>
+        <p>first 20 words in artice</p>
+        <p><button class="button">Read Post</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <input type="text" name="Post1" value="UserName">
+      <div class="container">
+        <h2>Title</h2>
+        <p class="title">UserName</p>
+        <p>first 20 words in artice</p>
+        <p><button class="button">Read Post</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <input type="text" name="Post1" value="">
+      <div class="container">
+        <h2>Title</h2>
+        <p class="title">UserName</p>
+        <p>first 20 words in artice</p>
+        <p><button class="button">Read Post</button></p>
+      </div>
+    </div>
+  </div>
 
-    $query = "SELECT UserID FROM User ORDER BY UserID ASC";
-    if ($result = $mysqli->query($query))
-    {
-      echo "<form action ='CheckUser.php' method = 'POST'>";
-      echo "<select name = 'postids'>";
-      while ($row = $result->fetch_assoc())
-      {
-        $postid = $row["UserID"];
-        echo "<option value = '";
-        echo $postid;
-        echo "'>";
-        echo $postid;
-        echo "</option>";
-      }
-      echo "</select>";
+  <div class="column">
+    <div class="card">
+      <input type="text" name="Post1" value="">
+      <div class="container">
+        <h2>Title</h2>
+        <p class="title">UserName</p>
+        <p>first 20 words in artice</p>
+        <p><button class="button">Read Post</button></p>
+      </div>
+    </div>
+  </div>
 
-      echo "<input type='submit' value='submit'>";
-      echo "</form>";
-      $result->free();
-    }
-    $mysqli->close();
-    ?>
-  </body>
+</div>
+
+</body>
 </html>

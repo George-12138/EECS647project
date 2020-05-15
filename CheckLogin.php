@@ -21,7 +21,7 @@
   }
   else
   {
-
+//  <script> window.location.replace('UserProfile/UserProfile.php');
     $query = "SELECT * FROM User WHERE UserName = '$username'";
     if ($result = $mysqli->query($query))
     {
