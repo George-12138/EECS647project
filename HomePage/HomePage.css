@@ -1,0 +1,89 @@
+div {
+    display: block;
+}
+
+@media (min-width: 601px)
+.col.m {
+    width: 33.33333%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.center {
+    text-align: center!important;
+}
+
+.container {
+    padding: 0.01em 1px;
+}
+
+.col {
+    float: left;
+}
+
+.m1 {
+	width: 100px;
+}
+
+.m5 {
+	width: 500px;
+}
+
+.m6 {
+	width: 600px;
+}
+
+.container:after, .container:before, .panel:after, .panel:before, .row:after, .row:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.box {
+	position: absolute;
+	width: 730px;
+    left: 50%;
+    margin-left: -365px;
+	margin-top:30px;
+}
+
+.row {
+	height: 100px;
+}
+
+.sel {
+	border: 1px solid white;
+}
+
+img {
+	pointer-events: none;
+}
+
+.round {
+	border-radius: 50%;
+}
+
+.id {
+	margin: 0;
+}
+
+.board {
+	border: 1px solid black;
+	background:black;
+}
+
+.button {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.distext {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 600px;
+}
