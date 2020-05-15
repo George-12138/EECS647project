@@ -12,26 +12,26 @@ function backHome(){
   window.location.replace("../HomePage/HomePage.php");
 }
 
-function addreply(t,u,d,l,i)
+function addreply(text,username,date,like,postid)
 {
 	$(document).ready(function(){
 		$("#replyarea").before(
       '<div class="row container">'+
         '<div class="col m1 container center">'+
-        '<p class="id">'+u+'</p>'+
-        '<input type="image" class="round" src="head.png" height="30" width="30" data-value="'+i+'" onclick="toprofile(this)">'+
-        '<p class="id">'+d+'</p>'+
+        '<p class="id">'+username+'</p>'+
+        '<input type="image" class="round" src="head.png" height="30" width="30" data-value="'+postid+'" onclick="toprofile(this)">'+
+        '<p class="id">'+date+'</p>'+
         '<div class="row container">'+
   			'<div class="col m05 container center button">'+
-  			'<input type="image" src="tu.png" width="40" height="40" data-value="'+i+'" onclick="addlike(this)">'+
+  			'<input type="image" src="tu.png" width="40" height="40" data-value="'+postid+'" onclick="addlike(this)">'+
   			'</div>'+
   			'<div class="col m05 container center button">'+
-  			'<p style="margin: 0;font-size:8px;">'+l+'</p>'+
+  			'<p style="margin: 0;font-size:8px;">'+like+'</p>'+
   			'</div>'+
   			'</div>'+
         '</div>'+
         '<div class="col m6 container">'+
-        '<p id="posttext" class="wrap">'+t+'</p>'+
+        '<p id="posttext" class="wrap">'+text+'</p>'+
         '</div>'+
       '</div>'
     );
