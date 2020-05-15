@@ -26,8 +26,10 @@ session_start();
             exit();
           }
           ?>
+
+       <input type="hidden" id="userid" <?php echo 'value = "'.$userID.'"'; ?> >
 		   <div id="box" class="container box">
-			      <div class="row container">
+			      <div id="header" class="row container">
 			           <div class="col m1 container center">
 			                <img type="image" src="icon.png" height="98" width="98">
 			           </div>
@@ -36,9 +38,7 @@ session_start();
 
 			           </div>
 			           <div class="col m1 container center">
-                   <a href="../UserProfile/UserProfile.php">
-                      <input type="image" id="head" class="round" src="head.png" height="70" width="70" <?php echo 'value = "'.$userID.'"'; ?>>
-                      </a>
+                      <input type="image" id="head" class="round" src="head.png" height="70" width="70" <?php echo 'data-value = "'.$userID.'"'; ?> onclick=toprofile(this)>
                       <p class="id">
                         <?php
                         $query = "SELECT * FROM User WHERE UserID = '$userID' ";
@@ -55,12 +55,12 @@ session_start();
 			           </div>
 			     </div>
            <?php
-               $query = "SELECT * FROM Post";
+               $query = "SELECT * FROM Post INNER JOIN User ON User.UserID=Post.PostUser ORDER BY PostDate ASC";
                if ($result = $mysqli->query($query))
                {
                  while ($row = $result->fetch_assoc())
                  {
-                       echo "<script>"."addpost('".$row["PostTitle"]."','".$row["PostText"]."','".$row["PostDate"]."','".$row["PostUser"]."')"."</script>";
+                       echo "<script>"."addpost('".$row["PostTitle"]."','".$row["PostText"]."','".$row["UserName"]."','".$row["PostDate"]."','".$row["PostID"]."')"."</script>";
                  }
                  $result->free();
                }
@@ -76,6 +76,5 @@ session_start();
       			</div>
       			</div>
 		   </div>
-
     </body>
 </html>

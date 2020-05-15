@@ -1,6 +1,8 @@
 <?php
   session_start();
-  $postreply = $_POST["postreply"];
+  $text = $_POST["text"];
+  $date = $_POST["date"];
+  $replyTo = $_POST["postid"];
   $userID = $_SESSION["ID"];
 
   $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
@@ -14,7 +16,7 @@
       exit();
   }
 
-  $query = "INSERT INTO Reply (ReplyText, ReplyUser) VALUES ('" . $postreply ."', '" . $userID . "');";
+  $query = "INSERT INTO Reply (ReplyText, ReplyDate, ReplyUser, ReplyTo) VALUES ('" . $text ."', '". $date ."', '". $userID ."', '" . $replyTo . "');";
   echo "
   <script>
   alert('Your reply has been submitted successfully!');

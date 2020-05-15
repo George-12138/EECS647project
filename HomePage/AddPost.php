@@ -3,7 +3,7 @@
   $date = $_POST["date"];
   $title = $_POST["title"];
   $text = $_POST["text"];
-  $userID = $_POST["ID"];
+  $userID = $_SESSION["ID"];
 
   $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
 

@@ -61,11 +61,33 @@ session_start();
           }
           ?>
           </p>
-			<input type="image" id="head" class="round" src="head.png" height="30" width="30">
-			<p class="id" id="id"></p>
+			<input type="image" id="head" class="round" src="head.png" height="30" width="30" <?php
+      $query = "SELECT * FROM Post WHERE PostID = '$PostID' ";
+      if ($result = $mysqli->query($query))
+      {
+          if ($row = $result->fetch_assoc())
+          {
+           echo 'data-value = "'.$row["PostUser"].'"';
+          }
+          $result->free();
+      }
+      ?> onclick="toprofile(this)">
+			<p class="id">
+        <?php
+        $query = "SELECT * FROM Post WHERE PostID = '$PostID' ";
+        if ($result = $mysqli->query($query))
+        {
+            if ($row = $result->fetch_assoc())
+            {
+             echo $row["PostDate"];
+            }
+            $result->free();
+        }
+         ?>
+       </p>
 			<div class="row container">
 			<div class="col m05 container center button">
-			<input type="image" src="tu.png" width="40" height="40" <?php echo 'value = "'.$userID.'"'; ?> onclick="addlike(this)">
+			<input type="image" src="tu.png" width="40" height="40" <?php echo 'data-value = "'.$userID.'"'; ?> onclick="addlike(this)">
 			</div>
 			<div class="col m05 container center button">
 			<p style="margin: 0;font-size:8px;">
@@ -73,9 +95,9 @@ session_start();
       $query = "SELECT * FROM Post WHERE PostID = '$PostID' ";
       if ($result = $mysqli->query($query))
       {
-          while ($row = $result->fetch_assoc())
+          if ($row = $result->fetch_assoc())
           {
-           echo "<script>"."addreply('".$row["ReplyText"]."','".$row["ReplyDate"]."')"."</script>";
+           echo $row["PostLike"];
           }
           $result->free();
       }
@@ -85,16 +107,28 @@ session_start();
 			</div>
 			</div>
 			<div class="col m6 container">
-			<p id="posttext" class="wrap"></p>
+			<p id="posttext" class="wrap">
+        <?php
+        $query = "SELECT * FROM Post WHERE PostID = '$PostID' ";
+        if ($result = $mysqli->query($query))
+        {
+            if ($row = $result->fetch_assoc())
+            {
+             echo $row["PostText"];
+            }
+            $result->free();
+        }
+         ?>
+       </p>
 			</div>
 			</div>
       <?php
-      $query = "SELECT * FROM Reply WHERE ReplyTo = '$PostID' ";
+      $query = "SELECT * FROM Reply INNER JOIN User ON User.UserID=Reply.ReplyUser WHERE ReplyTo = '$PostID' ORDER BY ReplyDate ASC";
       if ($result = $mysqli->query($query))
       {
           while ($row = $result->fetch_assoc())
           {
-           echo "<script>"."addreply('".$row["ReplyText"]."','".$row["ReplyDate"]."','".$row["ReplyLike"]."','".$row["ReplyUser"]."')"."</script>";
+           echo "<script>"."addreply('".$row["ReplyText"]."','".$row["UserName"]."','".$row["ReplyDate"]."','".$row["ReplyLike"]."','".$row["ReplyID"]."')"."</script>";
           }
           $result->free();
       }
