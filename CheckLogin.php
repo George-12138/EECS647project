@@ -1,8 +1,7 @@
 
 <?php
   session_start();
-  $userid = $_POST["userid"];
-  $_SESSION["ID"] = $_POST["userid"];
+  $username = $_POST["username"];
   $password = $_POST["password"];
   $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
   /* check connection */
@@ -11,23 +10,25 @@
       printf("Connect failed: %s\n", $mysqli->connect_error);
       exit();
   }
-  if ($userid == ""||$password == "")
+  if ($username == ""||$password == "")
   {
     echo "
     <script>
-    alert('Error: Userid or password is empty.');
+    alert('Error: nickname or password is empty.');
     window.history.go(-1);
     </script>
     ";
   }
   else
   {
-    $query = "SELECT * FROM User WHERE UserID='$userid'";
+
+    $query = "SELECT * FROM User WHERE UserName = '$username'";
     if ($result = $mysqli->query($query))
     {
       $row = $result->fetch_assoc();
       if($password == $row["UserPassword"])
       {
+        $_SESSION["ID"] = $row["UserID"];
         echo "
         <script> window.location.replace('HomePage/HomePage.php');
         </script>
@@ -37,7 +38,7 @@
       {
         echo "
         <script>
-        alert('Userid or password is incorrect.(@^@)');
+        alert('nickname or password is incorrect. XD');
         window.history.go(-1);
         </script>"
         ;

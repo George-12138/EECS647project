@@ -4,15 +4,15 @@ session_start();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>GL Book</title>
+    <title>STEM Book</title>
     <center>
-      <h1>Login to your GL Book</h1>
+      <h1>Login to your STEM Book</h1>
     </center>
   </head>
   <body>
     <center>
       <form action="CheckLogin.php" method="post">
-        <p>UserID: <input type="text" name="userid" ></p>
+        <p>Nickname: <input type="text" name="username" ></p>
         <p>Password: <input type="text" name="password" ></p>
         <input type="submit"  value="Login">
       </form>

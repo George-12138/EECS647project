@@ -1,12 +1,12 @@
 <?php
+
   $username = $_POST["username"];
   $password = $_POST["password"];
   $repassword = $_POST["repassword"];
 
-  $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
   $userFound = false;
   $pwFound = true;
-
+  $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
   /* check connection */
   if ($mysqli->connect_error)
   {
@@ -57,11 +57,10 @@
     if ($result = $mysqli->query($query))
     {
     }
-
     echo "
     <script>
     alert('Your account was created successfully! Now login to enjoy the arcade!');
-    window.location.replace('../LogInPage.html');
+    window.location.replace('../LogInPage.php');
     </script>
     ";
   }

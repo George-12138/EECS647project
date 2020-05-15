@@ -3,8 +3,14 @@ $(document).ready(function(){
 		var title = document.getElementById("titleinput").value;
 		var text = $('textarea').val();
 		var d = new Date();
+    $.post("AddPost.php");
 		addpost(title,text,d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
-		$.post("AddPost.php",{title:title,text:text,date:d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()})
+
+    /*
+    {title:title,
+      text:text,
+      date:d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()
+    }*/
 	});
 });
 
