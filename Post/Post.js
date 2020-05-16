@@ -22,10 +22,10 @@ function addreply(text,username,date,like,userid,postid,isreply)
         '<input type="image" class="round" src="head.png" height="30" width="30" data-value="'+userid+'" onclick="toprofile(this)">'+
         '<p class="id" style="margin: 0;font-size:10px;">'+date+'</p>'+
         '<div class="row container">'+
-  			'<div class="col m05 container center button">'+
+  			'<div class="col m05 container center">'+
   			'<input type="image" src="tu.png" width="40" height="40" data-yn="'+isreply+'" data-value="'+postid+'" onclick="addlike(this)">'+
   			'</div>'+
-  			'<div class="col m05 container center button">'+
+  			'<div class="col m05 container center">'+
   			'<p style="margin: 0;font-size:8px;">'+like+'</p>'+
   			'</div>'+
   			'</div>'+

@@ -71,10 +71,10 @@ session_start();
                }
                $mysqli->close();
             ?>
-            <div id="postarea" class="row container" style="background-color :#DCF8C6; ">
+            <div id="postarea" class="row container" >
       			<div class="col m6 container">
             <input id="titleinput" size="75" style="background-color :#DCF8C6;">
-      			<textarea name="text" rows="8" cols="80" wrap="soft"> </textarea>
+      			<textarea name="text" rows="8" cols="80" wrap="soft" style="background-color :#DCF8C6;" > </textarea>
       			</div>
       			<div class="col m1 container center">
       			<button id="post" >Post</button>

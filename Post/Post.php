@@ -89,10 +89,10 @@ session_start();
        ?>
 			<div id="replyarea" class="row container">
 			<div class="col m6 container">
-			<textarea name="text" rows="8" cols="80" wrap="soft"> </textarea>
+			<textarea name="text" rows="8" cols="80" wrap="soft" style="background-color :#DCF8C6;"> </textarea>
 			</div>
-			<div class="col m1 container center button">
-			<button id="reply">Post Reply</button>
+			<div class="col m1 container center " >
+			<button id="reply" >Post Reply</button>
 			</div>
 			</div>
 		</div>

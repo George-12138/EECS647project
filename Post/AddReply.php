@@ -17,14 +17,9 @@
   }
 
   $query = "INSERT INTO Reply (ReplyText, ReplyDate, ReplyUser, ReplyTo) VALUES ('" . $text ."', '". $date ."', '". $userID ."', '" . $replyTo . "');";
-  echo "
-  <script>
-  alert('Your reply has been submitted successfully!');
-  window.location.reload();
-  </script>
-    ";
+  if ($result = $mysqli->query($query))
+  {
   }
-
     /* close connection */
     $mysqli->close();
 ?>
