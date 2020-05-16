@@ -18,9 +18,9 @@ function addreply(text,username,date,like,postid)
 		$("#replyarea").before(
       '<div class="row container">'+
         '<div class="col m1 container center">'+
-        '<p class="id">'+username+'</p>'+
+        '<p class="id" style="margin: 0;font-size:10px;">'+username+'</p>'+
         '<input type="image" class="round" src="head.png" height="30" width="30" data-value="'+postid+'" onclick="toprofile(this)">'+
-        '<p class="id">'+date+'</p>'+
+        '<p class="id" style="margin: 0;font-size:10px;">'+date+'</p>'+
         '<div class="row container">'+
   			'<div class="col m05 container center button">'+
   			'<input type="image" src="tu.png" width="40" height="40" data-value="'+postid+'" onclick="addlike(this)">'+
