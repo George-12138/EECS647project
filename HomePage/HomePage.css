@@ -87,3 +87,8 @@ img {
   text-overflow: ellipsis;
   max-width: 600px;
 }
+
+h2{
+  color: #43B7F1;
+  text-decoration: underline;
+}
