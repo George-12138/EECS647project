@@ -14,7 +14,7 @@
       exit();
   }
 
-  if ($isReply == '0')
+  if ($isReply == 0)
   {
     $query = "UPDATE Reply SET ReplyLike = ReplyLike + 1 WHERE ReplyID = '$postid' ";
     if ($result = $mysqli->query($query))
