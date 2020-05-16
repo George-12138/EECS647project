@@ -20,8 +20,8 @@ function addpost(header,text,username,date,postid,userid)
 			'</div>'+
 			'<div class="col container m1 center">'+
 			'<input type="image" class="round" src="head.png" height="30" width="30" data-value="'+userid+'"onclick=toprofile(this)>'+
-      '<p class="id">'+username+'</p>'+
-			'<p class="id">'+date+'</p>'+
+      '<p class="id" style="margin: 0;font-size:10px;">'+username+'</p>'+
+			'<p class="id" style="margin: 0;font-size:10px;">'+date+'</p>'+
 			'</div>'+
 			'</div>'
 		);

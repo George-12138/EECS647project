@@ -15,6 +15,7 @@ session_start();
     <body>
       <?php
       $userID = $_SESSION["ID"];
+      $PostID = $_SESSION["PostID"];
       $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
       if ($mysqli->connect_errno)
       {
@@ -45,82 +46,23 @@ session_start();
       </h2>
 			</div>
 			</div>
-			<div class="row container">
-			<div class="col m1 container center">
-        <p class="id">
-          <?php
-          $query = "SELECT * FROM User WHERE UserID = '$userID' ";
-          if ($result = $mysqli->query($query))
-          {
-            if($row = $result->fetch_assoc())
-            {
-              echo $row["UserName"];
-            }
-            $result->free();
-          }
-          ?>
-          </p>
-			<input type="image" id="head" class="round" src="head.png" height="30" width="30" <?php
-      $query = "SELECT * FROM Post WHERE PostID = '$PostID' ";
-      if ($result = $mysqli->query($query))
-      {
-          if ($row = $result->fetch_assoc())
-          {
-           echo 'data-value = "'.$row["PostUser"].'"';
-          }
-          $result->free();
-      }
-      ?> onclick="toprofile(this)">
-			<p class="id">
-        <?php
-        $query = "SELECT * FROM Post WHERE PostID = '$PostID' ";
-        if ($result = $mysqli->query($query))
-        {
-            if ($row = $result->fetch_assoc())
-            {
-             echo $row["PostDate"];
-            }
-            $result->free();
-        }
-         ?>
-       </p>
-			<div class="row container">
-			<div class="col m05 container center button">
-			<input type="image" src="tu.png" width="40" height="40" <?php echo 'data-value = "'.$userID.'"'; ?> onclick="addlike(this)">
-			</div>
-			<div class="col m05 container center button">
-			<p style="margin: 0;font-size:8px;">
       <?php
-      $query = "SELECT * FROM Post WHERE PostID = '$PostID' ";
+      $query = "SELECT * FROM User INNER JOIN Post ON User.UserID=Post.PostUser WHERE PostID = '$PostID' ";
       if ($result = $mysqli->query($query))
       {
-          if ($row = $result->fetch_assoc())
-          {
-           echo $row["PostLike"];
-          }
-          $result->free();
-      }
-       ?>
-      </p>
-			</div>
-			</div>
-			</div>
-			<div class="col m6 container">
-			<p id="posttext" class="wrap">
-        <?php
-        $query = "SELECT * FROM Post WHERE PostID = '$PostID' ";
-        if ($result = $mysqli->query($query))
+        if($row = $result->fetch_assoc())
         {
-            if ($row = $result->fetch_assoc())
-            {
-             echo $row["PostText"];
-            }
-            $result->free();
+          echo "<script>"."addreply('".
+          $row["PostText"]."','".
+          $row["UserName"]."','".
+          $row["PostDate"]."','".
+          $row["PostLike"]."','".
+          $row["PostUser"]."')".
+          "</script>";
         }
-         ?>
-       </p>
-			</div>
-			</div>
+        $result->free();
+      }
+      ?>
       <?php
       $query = "SELECT * FROM Reply INNER JOIN User ON User.UserID=Reply.ReplyUser WHERE ReplyTo = '$PostID' ORDER BY ReplyDate ASC";
       if ($result = $mysqli->query($query))

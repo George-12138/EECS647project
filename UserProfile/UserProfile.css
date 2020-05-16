@@ -71,3 +71,10 @@ html {
     display: block;
   }
 }
+
+.distext {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 600px;
+}
