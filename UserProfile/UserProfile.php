@@ -33,7 +33,9 @@ session_start();
    ?>
  </h1>
 </div>
-<p><button class="button" onclick="goback()">go back</button></p>
+<form method="post" action="../HomePage/HomePage.php">
+  <p><button class="button" type="submit"> back to HomePage </button></p>
+</form>
 
 <h2 style="text-align:center" id="Follower">Your Follower</h2>
 <div class="row">
