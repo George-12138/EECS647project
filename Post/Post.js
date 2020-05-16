@@ -12,14 +12,14 @@ function backHome(){
   window.location.replace("../HomePage/HomePage.php");
 }
 
-function addreply(text,username,date,like,postid,isreply)
+function addreply(text,username,date,like,userid,postid,isreply)
 {
 	$(document).ready(function(){
 		$("#replyarea").before(
       '<div class="row container">'+
         '<div class="col m1 container center">'+
         '<p class="id" style="margin: 0;font-size:10px;">'+username+'</p>'+
-        '<input type="image" class="round" src="head.png" height="30" width="30" data-value="'+postid+'" onclick="toprofile(this)">'+
+        '<input type="image" class="round" src="head.png" height="30" width="30" data-value="'+userid+'" onclick="toprofile(this)">'+
         '<p class="id" style="margin: 0;font-size:10px;">'+date+'</p>'+
         '<div class="row container">'+
   			'<div class="col m05 container center button">'+
