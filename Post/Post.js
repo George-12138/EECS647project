@@ -12,7 +12,7 @@ function backHome(){
   window.location.replace("../HomePage/HomePage.php");
 }
 
-function addreply(text,username,date,like,postid)
+function addreply(text,username,date,like,postid,isreply)
 {
 	$(document).ready(function(){
 		$("#replyarea").before(
@@ -23,7 +23,7 @@ function addreply(text,username,date,like,postid)
         '<p class="id" style="margin: 0;font-size:10px;">'+date+'</p>'+
         '<div class="row container">'+
   			'<div class="col m05 container center button">'+
-  			'<input type="image" src="tu.png" width="40" height="40" data-value="'+postid+'" onclick="addlike(this)">'+
+  			'<input type="image" src="tu.png" width="40" height="40" data-yn="'+isreply+'" data-value="'+postid+'" onclick="addlike(this)">'+
   			'</div>'+
   			'<div class="col m05 container center button">'+
   			'<p style="margin: 0;font-size:8px;">'+like+'</p>'+
@@ -40,7 +40,7 @@ function addreply(text,username,date,like,postid)
 
 function addlike(e){
   $.post("AddLike.php",
-  {postid:e.dataset.value}
+  {postid:e.dataset.value,isreply:e.dataset.yn}
   );
   setTimeout(function(){ window.location.reload(); }, 500);
 }

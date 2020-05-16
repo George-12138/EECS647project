@@ -1,4 +1,3 @@
-
 function addfollower(name){
   $(document).ready(function(){
 		$("#Follower").after(
