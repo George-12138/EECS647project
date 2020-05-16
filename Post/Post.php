@@ -13,6 +13,9 @@ session_start();
     </head>
 
     <body>
+      <center>
+        <a href='../HomePage/HomePage.php'><button class="button">Back to HoemPage</button></a>
+      </center>
       <?php
       $userID = $_SESSION["ID"];
       $PostID = $_SESSION["PostID"];
@@ -94,9 +97,7 @@ session_start();
 			</div>
 		</div>
     <div class="col m6 container">
-    <center>
-      <button type="button" name="backToHome" onclick="backHome()">Back To Home Page</button>
-    </center>
+
     </div>
     </body>
 </html>

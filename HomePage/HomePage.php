@@ -12,11 +12,9 @@ session_start();
 		type="text/css">
     </head>
     <body>
-      <form align="right" name="form1" method="post" action="../LogInPage.php">
-        <label>
-        <input name="submit2" type="submit" id="submit2" value="log out">
-        </label>
-      </form>
+      <center>
+      <a href='../LogInPage.php'><button class="button">Log Out</button></a>
+     </center>
       <?php
       $userID = $_SESSION["ID"];
       $mysqli = new mysqli("mysql.eecs.ku.edu", "c712g285", "caC3miex", "c712g285");
@@ -73,13 +71,13 @@ session_start();
                }
                $mysqli->close();
             ?>
-            <div id="postarea" class="row container">
+            <div id="postarea" class="row container" style="background-color :#DCF8C6; ">
       			<div class="col m6 container">
-            <input id="titleinput" size="75">
+            <input id="titleinput" size="75" style="background-color :#DCF8C6;">
       			<textarea name="text" rows="8" cols="80" wrap="soft"> </textarea>
       			</div>
-      			<div class="col m1 container center button">
-      			<button id="post">Post</button>
+      			<div class="col m1 container center">
+      			<button id="post" >Post</button>
       			</div>
       			</div>
 		   </div>
