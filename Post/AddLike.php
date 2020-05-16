@@ -16,26 +16,18 @@
 
   if ($isReply == '0')
   {
-    $query = "UPDATE Reply SET ReplyLike = ReplyLike+1 WHERE ReplyID = '$postid' ";
-    echo "
-    <script>
-    alert('Your reply has been submitted successfully!');
-    window.location.reload();
-    </script>
-      ";
-    }
-
-    if ($isReply == '1')
+    $query = "UPDATE Reply SET ReplyLike = ReplyLike + 1 WHERE ReplyID = '$postid' ";
+    if ($result = $mysqli->query($query))
     {
-      $query = "UPDATE Post SET PostLike = PostLike+1 WHERE PostID = '$postid' ";
-      echo "
-      <script>
-      alert('Your post has been submitted successfully!');
-      window.location.reload();
-      </script>
-        ";
-      }
-
+    }
+  }
+  else
+  {
+    $query = "UPDATE Post SET PostLike = PostLike + 1 WHERE PostID = '$postid' ";
+    if ($result = $mysqli->query($query))
+    {
+    }
+  }
     /* close connection */
     $mysqli->close();
 ?>
