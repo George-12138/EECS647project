@@ -57,7 +57,7 @@ session_start();
           $row["UserName"]."','".
           $row["PostDate"]."','".
           $row["PostLike"]."','".
-          $row["PostUser"]."')".
+          $row["PostUser"]."','1')".
           "</script>";
         }
         $result->free();
@@ -74,7 +74,7 @@ session_start();
            $row["UserName"]."','".
            $row["ReplyDate"]."','".
            $row["ReplyLike"]."','".
-           $row["ReplyUser"]."')".
+           $row["ReplyUser"]."','0')".
            "</script>";
           }
           $result->free();
