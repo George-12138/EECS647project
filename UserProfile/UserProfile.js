@@ -1,6 +1,3 @@
-function goback(){
-  window.history.go(-1);
-}
 
 function addfollower(name){
   $(document).ready(function(){
